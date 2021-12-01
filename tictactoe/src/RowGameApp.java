@@ -6,7 +6,9 @@ public class RowGameApp
      * Starts a new game in the GUI.
      */
     public static void main(String[] args) {
-        RowGameController game = new RowGameController();
+        String mode = args[0]; 
+        System.out.println("My mode is" + args[0]); 
+        RowGameController game = new RowGameController(mode);
         game.gameView.gui.setVisible(true);
     }
 }
