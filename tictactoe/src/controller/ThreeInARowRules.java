@@ -2,12 +2,26 @@ package controller;
 
 import model.RowGameModel;
 
+/**
+ * Class that implements the rules for three in a row
+ */
 public class ThreeInARowRules implements GameModeInterface {
+
+    /**
+     * Constructor for ThreeInARowRules
+     * 
+     * @param blockIndex
+     * @param gameModel
+     * @param reset
+     */
     public ThreeInARowRules(BlockIndex blockIndex, RowGameModel gameModel, int reset) {
     }
 
+    /**
+    * Implementation of CheckIsLegalMove according to Three in a row rules 
+    */
     @Override
-    public boolean CheckIslegalMove(BlockIndex blockIndex, RowGameModel gameModel, int reset) {
+    public boolean CheckIsLegalMove(BlockIndex blockIndex, RowGameModel gameModel, int reset) {
         if (reset == 1) {
             if (blockIndex.getRow() == 2)
                 return true;

@@ -17,7 +17,9 @@ public class RowGameController {
 	public String mode;
 
 	/**
-	 * Creates a new game initializing the GUI.
+	 * Creates a new game initializing the GUI
+	 * 
+	 * @param mode the game mode inputted by the user
 	 */
 	public RowGameController(String mode) {
 		gameModel = new RowGameModel();
@@ -30,6 +32,12 @@ public class RowGameController {
 		this.resetGame();
 	}
 
+	/**
+	 * Internal method for getting the block index object
+	 * 
+	 * @param block the block we want to get the index of
+	 * @return the block index of the block
+	 */
 	private BlockIndex getBlockIndex(JButton block) {
 		for (int row = 0; row < 3; row++) {
 			for (int column = 0; column < 3; column++) {
@@ -42,16 +50,33 @@ public class RowGameController {
 		return null;
 	}
 
+	/**
+	 * Sets the game mode that is being used for this instance
+	 */
 	public class gameMode {
 		private GameModeInterface gm;
 
+		/**
+		 * The constructor for the game mode
+		 * 
+		 * @param gm An instance of the game mode interface
+		 */
 		public gameMode(GameModeInterface gm) {
 			this.gm = gm;
 		}
 
+		/**
+		 * Calls the CheckIsLegalMove method to check whether the move follows the game
+		 * mode rules
+		 * 
+		 * @param blockIndex the block the user is trying to make their move in
+		 * @param gameModel  the current game
+		 * @param reset      whether the game is being reset
+		 * @return
+		 */
 		public boolean checkLegal(BlockIndex blockIndex, RowGameModel gameModel, int reset) {
 
-			return gm.CheckIslegalMove(blockIndex, gameModel, reset);
+			return gm.CheckIsLegalMove(blockIndex, gameModel, reset);
 		}
 
 	}

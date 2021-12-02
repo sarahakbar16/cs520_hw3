@@ -1,6 +1,8 @@
 package model;
 
-
+/**
+ * Enumerator for Player 
+ */
 public enum Player {
     PLAYER_1(1), PLAYER_2(2);
 
