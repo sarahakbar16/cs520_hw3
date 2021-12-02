@@ -18,3 +18,12 @@
 ### How to clean up (from Terminal):
 
 1. Run `ant clean` to clean the project (i.e., delete all generated files).
+
+### How to run TicTacToe and ThreeInARow game modes 
+
+After building the project: 
+
+Run `java -cp bin RowGameApp 1` to play TicTacToe mode. By default, the game is set to TicTacToe rules. 
+
+Run `java -cp bin RowGameApp 2` to play ThreeInARow mode. 
+
